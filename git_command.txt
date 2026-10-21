@@ -1,0 +1,100 @@
+PS D:\git_practice> git status
+fatal: not a git repository (or any of the parent directories): .git
+PS D:\git_practice> git config --global user.email "mukulshergill684@gmail.com" 
+PS D:\git_practice> git config --global user.name "Mukul"
+PS D:\git_practice> git init
+Initialized empty Git repository in D:/git_practice/.git/
+PS D:\git_practice> git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+PS D:\git_practice> git branch
+PS D:\git_practice> git add .
+PS D:\git_practice> git commit -m "initial commit"
+[master (root-commit) f891c43] initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.md
+PS D:\git_practice> git branch
+* master
+PS D:\git_practice> echo "This is another data ingestion file" << data_ingest.txt
+At line:1 char:45
++ echo "This is another data ingestion file" << data_ingest.txt
++                                             ~
+Missing file specification after redirection operator.
+At line:1 char:44
++ echo "This is another data ingestion file" << data_ingest.txt
++                                            ~
+The '<' operator is reserved for future use.
+At line:1 char:45
++ echo "This is another data ingestion file" << data_ingest.txt
++                                             ~
+The '<' operator is reserved for future use.
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : MissingFileSpecification
+ 
+PS D:\git_practice> echo "This is another data ingestion file"> data_ingest.txt  
+PS D:\git_practice> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        data_ingest.txt
+        data_ingestion.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\git_practice> git add data_ingestion.txt
+PS D:\git_practice> git commit -m "Ingest data" 
+[master 7af2d3e] Ingest data
+ 1 file changed, 2 insertions(+)
+ create mode 100644 data_ingestion.txt
+PS D:\git_practice> git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        data_ingest.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+PS D:\git_practice> git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+PS D:\git_practice> git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+PS D:\git_practice> git add .
+PS D:\git_practice> git commit                                                   
+Aborting commit due to empty commit message.
+PS D:\git_practice> 
+PS D:\git_practice> git commit   
+[master 506abb3] Commit both files for data ingestion and IoT data
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 data_ingest.txt
+ create mode 100644 iot_data_ingestion.txt
+PS D:\git_practice> git add .
+PS D:\git_practice> git commit -m "Ingest new iot data"
+[master a758e5b] Ingest new iot data
+ 1 file changed, 1 insertion(+)
+PS D:\git_practice> git log
+commit a758e5b3ea5d2e3d42845a92471ecb5b7f7f4f76 (HEAD -> master)
+Author: Mukul <mukulshergill684@gmail.com>
+Date:   Thu Oct 22 01:06:00 2026 +0530
+
+    Ingest new iot data
+
+commit 506abb31fa4c175a96988dfd122290430e3c2af9
+Author: Mukul <mukulshergill684@gmail.com>
+Date:   Thu Oct 22 01:03:22 2026 +0530
+:
+commit a758e5b3ea5d2e3d42845a92471ecb5b7f7f4f76 (HEAD -> master)
+Author: Mukul <mukulshergill684@gmail.com>
+Date:   Thu Oct 22 01:06:00 2026 +0530
+
+    Ingest new iot data
+
+commit 506abb31fa4c175a96988dfd122290430e3c2af9
+Author: Mukul <mukulshergill684@gmail.com>
+Date:   Thu Oct 22 01:03:22 2026 +0530
